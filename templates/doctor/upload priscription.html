@@ -1,0 +1,29 @@
+{% extends 'doctor/doctor_index.html' %}
+{% block body %}
+<table width="200" border="1">
+  <tr>
+    <td>Priscription
+      <form id="form2" name="form2" method="post" action="">
+        <label>
+          <input type="text" name="textfield" />
+        </label>
+      </form>    </td>
+    <td><form id="form1" name="form1" method="post" action="">
+      <label></label>
+    </form>    
+      <form id="form3" name="form3" enctype="multipart/form-data" method="post" action="">
+        <label>
+          <input type="file" name="file" />
+        </label>
+      </form>    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2"><form id="form4" name="form4" method="post" action="">
+      <label>
+      <div align="center">
+        <input type="submit" name="Submit" value="Upload" />
+      </div>
+      </label>
+    </form>    </td>
+{% endblock %}

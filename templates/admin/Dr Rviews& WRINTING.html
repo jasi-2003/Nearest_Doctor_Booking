@@ -1,0 +1,37 @@
+{% extends 'admin/admin_index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/viewreview_search">
+  <table width="200" border="1" class="table table-hover">
+    <tr>
+      <td colspan="5"><label>
+        <br />
+        <div align="left">
+          <div align="left">name
+
+            <input type="text" name="textfield6"/>
+            <input type="submit" name="Submit" value="search" class="btn btn-primary" />
+          </div>
+        </div>
+      </label></td>
+    </tr>
+    <tr>
+      <td>User</td>
+      <td>Doctor</td>
+      <td>Date</td>
+      <td>Reviw</td>
+      <td>Rating</td>
+    </tr>
+
+    {% for i in val %}
+    </tr>
+       <td>{{ i.User.First_name }} {{ i.User.Last_name }}</td>
+      <td>{{ i.Doctor.Name }}</td>
+      <td>{{ i.Date }}</td>
+      <td>{{ i.Riview }}</td>
+      <td>{{ i.Rating }}</td>
+    </tr>
+      {% endfor %}
+
+  </table>
+</form>
+{% endblock %}

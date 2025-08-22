@@ -1,0 +1,40 @@
+{%extends 'doctor/doctor_index.html' %}
+{% block body %}
+<form id="customers" name="customers" method="post" action="Timeshedule_post">
+  <table  class="form-control" id="customers"/>
+    <tr>
+      <td>Day</td>
+      <td><label>
+        <select name="day">
+            <option>Sunday</option>
+            <option>Monday</option>
+            <option>Tuesday</option>
+            <option>Wednesday</option>
+            <option>Thursday</option>
+            <option>Friday</option>
+            <option>Saturday</option>
+        </select>
+      </label></td>
+    </tr>
+    <tr>
+      <td>Fromtime</td>
+      <td><label>
+        <input type="time" name="textfield2" />
+      </label></td>
+    </tr>
+    <tr>
+      <td>Totime</td>
+      <td><label>
+        <input type="time" name="textfield3" />
+      </label></td>
+    </tr>
+    <tr>
+      <td colspan="2"><label>
+        <div align="center">
+          <input type="submit" name="Submit" value="Add" />
+          </div>
+      </label></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

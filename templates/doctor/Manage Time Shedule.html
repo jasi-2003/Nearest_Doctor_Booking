@@ -1,0 +1,33 @@
+{% extends 'doctor/doctor_index.html' %}
+{% block body %}
+<form id="customers" name="customers" method="post" action="timeshadule">
+
+<table width="200" border="1" id="customers"/>
+  <tr>
+    <th>From Time </th>
+    <th>To Time </th>
+    <th>Day</th>
+    <th>&nbsp;</th>
+  </tr>
+    {% for i in val %}
+  <tr>
+    <td>{{ i.From_time }}</td>
+    <td>{{ i.To_time }}</td>
+    <td>{{ i.Day}}</td>
+    <td> <a href="/delete_sch/{{ i.id }}" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+  <td><p><a href="/edit_dct/{{ i.id }}" class="btn btn-info"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></p>
+  </tr>
+    {% endfor %}
+  <tr>
+    <td colspan="4" class="form-control">
+
+        <div align="center">
+          <input type="submit" name="Submit" value="Add" />
+        </div>
+
+
+    </td>
+  </tr>
+</table>
+    </form>
+{% endblock %}

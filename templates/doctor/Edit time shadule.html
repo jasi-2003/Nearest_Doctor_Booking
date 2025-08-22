@@ -1,0 +1,41 @@
+{% extends 'doctor/doctor_index.html'%}
+{% block body %}
+
+<form id="form1" name="form1" method="post" action="/edittimeschedulepost">
+  <table width="200" border="1">
+    <tr>
+      <td>Day</td>
+      <td><label>
+        <select name="day">
+            <option>Sunday</option>
+            <option>Monday</option>
+            <option>Tuesday</option>
+            <option>Wednesday</option>
+            <option>Thursday</option>
+            <option>Friday</option>
+            <option>Saturday</option>
+        </select>
+      </label></td>
+    </tr>
+    <tr>
+      <td>Fromtime</td>
+      <td><label>
+        <input type="time" name="textfield2" value="{{ val.From_time|time:'H:i' }}" />
+      </label></td>
+    </tr>
+    <tr>
+      <td>Totime</td>
+      <td><label>
+        <input type="time" name="textfield3" value="{{ val.To_time|time:'H:i' }}" />
+      </label></td>
+    </tr>
+    <tr>
+      <td colspan="2"><label>
+        <div align="center">
+          <input type="submit" name="Submit" value="Add" />
+          </div>
+      </label></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

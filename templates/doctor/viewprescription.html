@@ -1,0 +1,31 @@
+{% extends 'doctor/doctor_index.html' %}
+{% block body %}
+<table width="1000" border="1">
+
+  <tr>
+    <td>Doctor</td>
+    <td>Prescription</td>
+    <td>Date</td>
+
+  </tr>
+    {% for i in val %}
+    <tr>
+     <td>{{ i.doctor.Name }}</td>
+     <td>{{ i.prescription }}</td>
+      <td>{{ i.date }}</td>
+
+      </tr>
+    <tr>
+        {% endfor %}
+    <td colspan="3">
+      <label>
+        <div align="center">
+          <a href="/add_presc">Add New</a>
+        </div>
+      </label>
+
+    </td>
+  </tr>
+
+</table>
+{% endblock %}

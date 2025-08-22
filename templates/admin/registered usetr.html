@@ -1,0 +1,38 @@
+{% extends 'admin/admin_index.html' %}
+{% block body %}
+<body>
+<form action="/register__search" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table width="200" border="1" class="table table-hover">
+    <tr>
+      <td colspan="6">Name 
+        <label>
+        <input type="text" name="textfield6" value="{{ search }}" />
+        <input type="submit" name="Submit" value="search" class="btn btn-primary" />
+      </label></td>
+    </tr>
+    <tr>
+      <td>Name</td>
+      <td>Address</td>
+      <td>Phone Number </td>
+      <td>Email</td>
+      <td>DOB</td>
+      <td>Gender</td>
+    </tr>
+      {% for i in val %}
+
+      <tr>
+
+    <td>{{ i.First_name }} {{ i.Last_name }}</td>
+    <td>{{ i.Place}} {{ i.Post }} {{ i.Pin }}</td>
+    <td>{{ i.Phone }}</td>
+    <td>{{ i.Email }}</td>
+    <td>{{ i.DOB }}</td>
+          <td>{{  i.Gender}}</td>
+  </tr>
+      {% endfor %}
+
+  </table>
+</form>
+{#</body>#}
+{#</html>#}
+{% endblock %}

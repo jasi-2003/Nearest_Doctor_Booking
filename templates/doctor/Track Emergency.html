@@ -1,0 +1,39 @@
+{% extends 'doctor/doctor_index.html' %}
+{% block body %}
+
+<form id="customers" name="customers" method="post" action="/search_TrackEmergency"class="btn btn-primary" />
+  <table width="200" border="1" class="table-hover">
+    <tr>
+      <td colspan="">
+      </td><td>
+        <label>
+        <input type="date" name="textfield4" value="{{ d }}"/>
+        </label></td><td>
+        <input type="submit" name="Submit" value="Search"TrackEmergency />
+    </td>
+    </tr>
+
+    <tr>
+      <th>User</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Latitude</th>
+      <th>Lougitude</th>
+
+      <td>&nbsp;</td>
+    </tr>
+          {% for i in val %}
+    <tr>
+        <td>{{ i.Patient.First_name }}{{i.Patient.Last_name  }}</td>
+      <td>{{ i.date }}</td>
+      <td>{{ i.time}}</td>
+      <td>{{ i.Lattitude}}</td>
+      <td>{{ i.Lougitude}}</td>
+
+      <td><a href="http://maps.google.com?q={{ i.Lattitude }},{{ i.lougitude }}">Track</a></td>
+    </tr>
+          {% endfor %}
+
+  </table>
+</form>
+{% endblock %}

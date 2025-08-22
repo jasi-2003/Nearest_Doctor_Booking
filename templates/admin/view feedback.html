@@ -1,0 +1,35 @@
+{% extends 'admin/admin_index.html' %}
+{% block body %}
+<body>
+<form id="customers" name="customers" method="post" action="/viwefeedback_search">
+<table width="200" border="1"class="table table-hover">
+  <tr>
+    <td colspan="4">
+        <label></label>
+    Date
+    <label>
+    <input type="date" name="Datefield" value="{{ search }}"/>
+    </label>
+    <label>
+    <input type="submit" name="Submit" value="search" class="btn btn-primary" />
+    </label>
+    </td>
+  </tr>
+  <tr>
+    <td>User</td>
+    <td>Docter</td>
+    <td>Date</td>
+    <td>Feedback</td>
+  </tr>
+   {% for i in val  %}
+    <tr>
+     <td>{{ i.Patient.First_name }} {{ i.Patient.Last_name }}</td>
+      <td>{{ i.Doctor.Name }}</td>
+      <td>&nbsp;{{ i.Date }}</td>
+      <td>{{ i.Feedback }}&nbsp;</td>
+      </tr>
+      {% endfor %}
+</table>
+  </form>
+</body>
+{% endblock %}

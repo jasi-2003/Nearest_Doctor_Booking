@@ -1,0 +1,36 @@
+{% extends 'admin/admin_index.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="patientcomplaint">
+  <table width="200" border="1" class="table table-hover">
+    <tr>
+      <td colspan="5">Date
+        <label>
+        <input type="date" name="textfield6" value="{{ search }}"/>
+      </label>
+      <label>
+      <input type="submit" name="Submit" value="Serech"  class="btn btn-primary"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td width="66">User</td>
+      <td width="62">Doctor</td>
+      <td width="8">Date</td>
+      <td width="14">complaint</td>
+      <td width="18">&nbsp;</td>
+    </tr>
+      {% for i in val  %}
+    <tr>
+     <td>{{ i.Patient.First_name }} {{ i.Patient.Last_name }}</td>
+      <td>{{ i.Doctor.Name }}</td>
+      <td>&nbsp;{{ i.Date }}</td>
+      <td>{{ i.complints }}&nbsp;</td>
+      <td>{% if i.Replay == 'pending' %}<a href="/sendreply/{{ i.id }}">Reply</a> {% else %}{{ i.Replay }} {% endif %}</td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+
+
+{% endblock %}

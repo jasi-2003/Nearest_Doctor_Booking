@@ -1,0 +1,31 @@
+{% extends 'doctor/doctor_index.html' %}
+{% block body %}
+
+<body>
+<form id="customers" name="customers" method="post" action="/search_patientAppoiment">
+  <table width="200" border="1">
+    <tr>
+      <td colspan="4" id="customers"/>
+        <label>
+        <input type="date" name="textfield" value="{{ d }}"/>
+        <input type="submit" name="Submit" value="search"class="btn btn-primary" />
+      </label></td>
+    </tr>
+    <tr>
+  </tr>
+    <tr>
+      <th>Patient</th>
+      <th>Date</th>
+      <th>Time</th>
+    </tr>
+      {% for i in val %}
+    <tr>
+      <td>{{ i.Patient.First_name }} {{ i.Patient.Last_name }}</td>
+      <td>{{ i.date }}</td>
+      <td>{{ i.time }}</td>
+
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+{% endblock %}

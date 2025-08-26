@@ -53,7 +53,7 @@ urlpatterns = [
     path('chatview', views.chatview, name='chatview'),
     path('coun_msg/<int:id>', views.coun_msg, name='coun_msg'),
     path('coun_insert_chat/<str:msg>/<int:id>', views.coun_insert_chat, name='coun_insert_chat'),
-    path(' users = login_table.objects.get(Username=username, Password=password'),
+   
 
 
 

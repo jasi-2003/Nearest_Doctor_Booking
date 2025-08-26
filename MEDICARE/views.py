@@ -7,6 +7,28 @@ from datetime import datetime
 # Create your views here.
 from MEDICARE.models import *
 
+from django.shortcuts import render, redirect
+from django.contrib.auth import authenticate, login
+from django.contrib import messages
+
+
+def login_view(request):
+    if request.method == "POST":
+        username = request.POST.get("username")
+        password = request.POST.get("password")
+
+        # Check authentication
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)   # Start user session
+            return redirect("/")   # Redirect to homepage (or dashboard)
+        else:
+            # Invalid credentials
+            messages.error(request, "Invalid username or password")
+            return render(request, "login.html")
+
+    # If GET request → show login form
+    return render(request, "login.html")
 
 def login(request):
     return render(request,"index.html")
